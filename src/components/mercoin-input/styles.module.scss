@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+
+  &.small {
+    label .value {
+      p {
+        font-size: 16px;
+      }
+
+      .icon {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-left: 0.2rem;
+      }
+    }
+  }
+
+  label {
+    .value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: text;
+
+      p {
+        transition: all 0.3s ease;
+
+        font-family: "Roboto";
+        font-weight: 400;
+        font-size: 36px;
+      }
+
+      .icon {
+        width: 3rem;
+        height: 3rem;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  input {
+    opacity: 0;
+    width: 0 !important;
+    height: 0 !important;
+
+    &:focus + label {
+      color: var(--color-blue);
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import "../../mixins";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: var(--menu-width);
+  height: 100%;
+  background-color: white;
+  padding-block: 5rem;
+  align-items: center;
+  position: fixed;
+
+  @include at-least(tablet) {
+    bottom: 0;
+    height: var(--menu-width);
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .logo {
+    width: 6rem;
+    height: 6rem;
+    background-color: var(--color-dark-10);
+    border-radius: 1.2rem;
+
+    @include at-least(tablet) {
+      display: none;
+    }
+  }
+
+  .icon {
+    width: 2.6rem;
+    height: 2.6rem;
+    color: var(--color-gray);
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    &:hover {
+      color: var(--color-blue);
+    }
+
+    &.active {
+      color: var(--color-blue);
+    }
+  }
+
+  .pages-container {
+    flex: 1;
+    padding-block: 8rem;
+
+    @include at-least(tablet) {
+      padding-block: unset;
+    }
+
+    .pages {
+      display: grid;
+      grid-auto-flow: row;
+      gap: 10rem;
+
+      @include at-least(tablet) {
+        gap: unset;
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+
+  .logout {
+    @include at-least(tablet) {
+      display: none;
+    }
+  }
+}

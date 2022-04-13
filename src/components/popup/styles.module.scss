@@ -1,0 +1,25 @@
+@import "../../mixins";
+
+.container {
+  user-select: none;
+  width: 102.4rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 4.2rem;
+  border-radius: 1.2rem;
+
+  @include at-least(tablet) {
+    width: 100%;
+  }
+
+  .buttons {
+    margin-top: 2.4rem;
+    display: flex;
+    justify-content: flex-end;
+
+    > *:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.dim {
+  background-color: rgba(black, 0.3);
+  cursor: pointer;
+  position: absolute;
+  inset: 0;
+  position: fixed;
+  inset: 0;
+}
+
+.container {
+  user-select: all;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}

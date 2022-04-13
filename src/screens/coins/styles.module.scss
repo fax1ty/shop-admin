@@ -1,0 +1,41 @@
+@import "../../mixins";
+
+header {
+  h1 {
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 64px;
+  }
+}
+
+.heading {
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  h2 {
+    flex: 1;
+
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .toolbar {
+    display: flex;
+    min-height: 5.4rem;
+    min-width: 51.2rem;
+
+    @include at-least(tablet) {
+      min-width: 60%;
+    }
+
+    > *:not(:last-child) {
+      margin-right: 1.2rem;
+    }
+  }
+}
+
+.table {
+  margin-top: 2.4rem;
+}

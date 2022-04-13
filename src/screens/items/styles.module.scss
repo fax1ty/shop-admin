@@ -1,0 +1,98 @@
+@import "../../mixins";
+
+header {
+  h1 {
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 64px;
+  }
+}
+
+.heading {
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  h2 {
+    flex: 1;
+
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .toolbar {
+    display: flex;
+    min-height: 5.4rem;
+    min-width: 51.2rem;
+
+    @include at-least(tablet) {
+      min-width: 60%;
+    }
+
+    > *:not(:last-child) {
+      margin-right: 1.2rem;
+    }
+  }
+}
+
+.items {
+  margin-top: 5.4rem;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.4rem;
+
+  @include at-least(tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .item {
+    height: 5.6rem;
+    background-color: var(--color-dark-10);
+    border-radius: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding-inline: 1.6rem;
+
+    > *:not(:last-child) {
+      margin-right: 1.2rem;
+    }
+
+    img {
+      width: 3.6rem;
+      height: 3.6rem;
+      background-color: var(--color-gray);
+      border-radius: 0.6rem;
+    }
+
+    .text {
+      flex: 1;
+
+      font-family: "Roboto";
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .icons {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 1.2rem;
+
+      > * {
+        width: 2.4rem;
+        height: 2.4rem;
+        cursor: pointer;
+      }
+    }
+
+    &.add {
+      cursor: pointer;
+      transition: all 0.5s ease;
+
+      &:hover {
+        background-color: var(--color-dark-25);
+      }
+    }
+  }
+}

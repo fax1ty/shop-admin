@@ -1,0 +1,54 @@
+@import "../../mixins";
+
+header {
+  h1 {
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 64px;
+  }
+}
+
+.list {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  width: 72rem;
+
+  @include at-least(tablet) {
+    width: 100%;
+  }
+
+  & > *:not(:last-child) {
+    margin-bottom: 1.2rem;
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-family: "Roboto";
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+}
+
+.checkbox {
+  border: 2px solid var(--color-gray);
+  border-radius: 0.8rem !important;
+
+  [class*="react-switch-bg"] {
+    background-color: white !important;
+  }
+
+  [class*="react-switch-handle"] {
+    background-color: var(--color-gray) !important;
+    width: 1.4rem !important;
+  }
+
+  input:checked + [class*="react-switch-handle"] {
+    background-color: var(--color-blue) !important;
+  }
+}
